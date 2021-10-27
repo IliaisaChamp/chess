@@ -1,8 +1,23 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  /* background-image: url('../pics/chassbg.png'); */
+  /* background-size: 100%; */
+  /* background-size: cover; */
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+.container {
+  /* padding: 50px; */
+  width: 100%;
+  /* height: 800px; */
+}
+
+#role {
+  display: contents;
+}
+
+.modal-content {
+  padding: 36px !important;
 }
