@@ -12,12 +12,10 @@ class UserService {
       childName,
       childExp,
       childAge,
-      childExp,
       role,
     } = data;
     try {
       const cryptPass = await bcrypt.hash(password, Number(process.env.SALT_ROUND));
-
       const currentUser = await User.create({
         email,
         first_name,
@@ -27,7 +25,7 @@ class UserService {
         password: cryptPass,
       });
 
-      const currentChild = await Child.create({
+      const currentChild = await Children.create({
         name: childName,
         exp: childExp,
         age: childAge,
