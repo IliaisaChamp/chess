@@ -5,10 +5,10 @@ const logger = require('morgan');
 const hbs = require('hbs');
 
 // init session and Redis store
-// const redis = require('redis');
-// const session = require('express-session');
-// const RedisStore = require('connect-redis')(session);
-// const redisClient = redis.createClient();
+const redis = require('redis');
+const session = require('express-session');
+const RedisStore = require('connect-redis')(session);
+const redisClient = redis.createClient();
 
 const app = express();
 
@@ -24,22 +24,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(
-//   session({
-//     name: 'sid',
-//     store: new RedisStore({ client: redisClient }),
-//     saveUninitialized: false,
-//     secret: process.env.SESSION_SECRET,
-//     resave: false,
-//   }),
-// );
+app.use(
+  session({
+    name: 'sid',
+    store: new RedisStore({ client: redisClient }),
+    saveUninitialized: false,
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+  }),
+);
 
-// app.use((req, res, next) => {
-//   res.locals.user = req.session.user;
-//   next();
-// });
+app.use((req, res, next) => {
+  res.locals.user = req.session.user;
+  next();
+});
 
-//routes
 
 const indexRouter = require('./routes/indexRouter');
 const usersRouter = require('./routes/usersRouter');
