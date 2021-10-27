@@ -12,7 +12,6 @@ class UserService {
       childName,
       childExp,
       childAge,
-      childExp,
       role,
     } = data;
     try {
