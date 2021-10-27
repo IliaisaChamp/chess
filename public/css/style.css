@@ -21,3 +21,16 @@ a {
 .modal-content {
   padding: 36px !important;
 }
+
+ul.tabs {
+  overflow: unset;
+  height: auto;
+}
+
+ul.tabs .tab {
+  display: block;
+}
+
+.tab-wrapper {
+  background-color: #fff;
+}

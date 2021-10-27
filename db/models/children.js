@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-  Childs.init({
+  Children.init({
     name: {
       type: DataTypes.STRING,
       allowNull: false
