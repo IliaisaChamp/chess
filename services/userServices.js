@@ -1,13 +1,55 @@
 const bcrypt = require('bcrypt');
-const { Post, Tag, PostTag, User } = require('../db/models');
+const { Children, User } = require('../db/models');
 
 class UserService {
-  static async createUser(data) {
-    const { email, name, password } = data;
+  static async createParentUser(data) {
+    const {
+      email,
+      first_name,
+      last_name,
+      phone,
+      password,
+      childName,
+      childExp,
+      childAge,
+      childExp,
+      role,
+    } = data;
     try {
       const cryptPass = await bcrypt.hash(password, Number(process.env.SALT_ROUND));
 
-      const currentUser = await User.create({ ...data, password: cryptPass });
+      const currentUser = await User.create({
+        email,
+        first_name,
+        last_name,
+        phone,
+        role,
+        password: cryptPass,
+      });
+
+      const currentChild = await Child.create({
+        name: childName,
+        exp: childExp,
+        age: childAge,
+        user_id: currentUser.id,
+      });
+
+      return currentUser;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async createTeacherUser(data) {
+    const { password } = data;
+    try {
+      const cryptPass = await bcrypt.hash(password, Number(process.env.SALT_ROUND));
+
+      const currentUser = await User.create({
+        ...data,
+        password: cryptPass,
+      });
+
       return currentUser;
     } catch (error) {
       throw error;

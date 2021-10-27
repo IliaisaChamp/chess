@@ -3,19 +3,35 @@ const UserService = require('../services/userServices');
 class UserController {
   static async create(req, res) {
     try {
-      const { email, name, password } = req.body;
-      if (email && name && password) {
-        const currentUser = await UserService.createUser({
-          email,
-          name,
-          password,
-        });
-        req.session.user = { id: currentUser.id, name: currentUser.name };
+      const {
+        email,
+        first_name,
+        last_name,
+        phone,
+        password,
+        role,
+      } = req.body;
 
-        return res.redirect('/');
-      } else {
-        return res.redirect('/user/signup');
+      switch (role) {
+        case 'parent':
+          console.log(data);
+          // const currentUser = await UserService.createParentUser(req.body);
+          // req.session.user = { id: currentUser.id, name: currentUser.first_name };
+          // return res.redirect('/account');
+          break;
+        case 'teacher':
+          const currentUser = await UserService.createTeacherUser({
+            email,
+            first_name,
+            last_name,
+            phone,
+            password,
+          });
+          req.session.user = { id: currentUser.id, name: currentUser.first_name };
+          break;
       }
+
+      return res.redirect('/');
     } catch (error) {
       console.log(error);
       return res.redirect('/user/signup');
