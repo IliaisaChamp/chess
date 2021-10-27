@@ -3,34 +3,36 @@ const UserService = require('../services/userServices');
 class UserController {
   static async create(req, res) {
     try {
-      const {
-        email,
-        first_name,
-        last_name,
-        phone,
-        password,
-        role,
-      } = req.body;
-console.log(req.body);
-      // switch (role) {
-      //   case 'parent':
-      //     // const currentUser = await UserService.createParentUser(req.body);
-      //     // req.session.user = { id: currentUser.id, name: currentUser.first_name };
-      //     // return res.redirect('/account');
-      //     break;
-      //   case 'teacher':
-      //     const currentUser = await UserService.createTeacherUser({
-      //       email,
-      //       first_name,
-      //       last_name,
-      //       phone,
-      //       password,
-      //     });
-      //     req.session.user = { id: currentUser.id, name: currentUser.first_name };
-      //     break;
-      // }
+      const { email, first_name, last_name, phone, password, role } = req.body;
+      switch (role) {
+        case 'parent':
+          const user = await UserService.findUser(req.body);
 
-      return res.redirect('/account');
+          if (!user) {
+            const currentUser = await UserService.createParentUser(req.body);
+            req.session.user = { id: currentUser.id, name: currentUser.first_name };
+            return res.redirect('/');
+          } else {
+            console.log('Такой пользователь уже есть');
+            return res.redirect('/');
+          }
+          break;
+        case 'teacher':
+          const currentTeacher = await UserService.createTeacherUser({
+            email,
+            first_name,
+            last_name,
+            phone,
+            password,
+          });
+          req.session.user = {
+            id: currentTeacher.id,
+            name: currentTeacher.first_name,
+          };
+          break;
+      }
+
+      return res.redirect('/');
     } catch (error) {
       console.log(error);
       return res.redirect('/');
@@ -39,7 +41,6 @@ console.log(req.body);
 
   static async signin(req, res) {
     try {
-      console.log(req.body);
       const { email, password } = req.body;
       if (email && password) {
         const currentUser = await UserService.findUser({ email, password });
@@ -51,11 +52,11 @@ console.log(req.body);
           return sendStatus(500);
         }
       } else {
-        return res.redirect('/user/signin');
+        return res.redirect('/');
       }
     } catch (error) {
       console.log(error);
-      return res.redirect('/user/signin');
+      return res.redirect('/');
     }
   }
 
