@@ -1,69 +1,125 @@
-  <!-- Modal Trigger -->
-    {{!-- <button data-target="modal1" class="btn modal-trigger">Modal</button> --}}
+<!-- Modal Trigger -->
+{{! <button data-target="modal1" class="btn modal-trigger">Modal</button> }}
 
+<!-- Modal Structure -->
+<div id='modal1' class='modal modal-fixed-footer'>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal modal-fixed-footer">
-
-    <form class="col s12" method="POST" action="/users/signup">
-    <div class="modal-content">
-  <div class="row">
-      <div class="row">
-        <div class="input-field col s6">
-          <input name="first_name" id="first_name" type="text" class="validate">
-          <label for="first_name">Имя Родителя</label>
+  <form class='col s12' method='POST' action='/users/signup'>
+    <div class='modal-content'>
+      <div class='row'>
+        <div class='row'>
+          <div class='input-field col s6'>
+            <input
+              name='first_name'
+              id='first_name'
+              type='text'
+              class='validate'
+            />
+            <label for='first_name'>Имя Родителя</label>
+          </div>
+          <div class='input-field col s6'>
+            <input
+              name='last_name'
+              id='last_name'
+              type='text'
+              class='validate'
+            />
+            <label for='last_name'>Фамилия Родителя</label>
+          </div>
         </div>
-        <div class="input-field col s6">
-          <input name="last_name" id="last_name" type="text" class="validate">
-          <label for="last_name">Фамилия Родителя</label>
+        <div class='row'>
+          <div class='input-field col s12'>
+            <input
+              name='password'
+              id='password'
+              type='password'
+              class='validate'
+            />
+            <label for='password'>Пароль</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input name="password" id="password" type="password" class="validate">
-          <label for="password">Пароль</label>
+        <div class='row'>
+          <div class='input-field col s12'>
+            <input name='phone' id='phone' type='text' class='validate' />
+            <label for='phone'>Номер телефона</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input name="phone" id="password" type="text" class="validate">
-          <label for="password">Номер телефона</label>
+        <div class='row'>
+          <div class='input-field col s12'>
+            <input name='email' id='email' type='email' class='validate' />
+            <label for='email'>Электронный адрес</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input name="email" id="email" type="email" class="validate">
-          <label for="email">Электронный адрес</label>
-        </div>
-      </div>
-        <div class="row">
-        <div class="input-field col s6">
-          <input name="childName" id="first_name" type="text" class="validate">
-          <label for="first_name">Имя ученика</label>
-        </div>
-        {{!-- <div class="input-field col s6">
+        <div class='row'>
+          <div class='input-field col s6'>
+            <input
+              name='childName'
+              id='childName'
+              type='text'
+              class='validate'
+            />
+            <label for='childName'>Имя ученика</label>
+          </div>
+          {{! <div class="input-field col s6">
           <input id="last_name" type="text" class="validate">
           <label for="last_name">Фамилия ученика</label>
-        </div> --}}
-      </div>
-        <div class="row">
-        <div class="input-field col s6">
-          <input name="childExp" id="first_name" type="text" class="validate">
-          <label for="first_name">Опыт ученика</label>
+        </div> }}
         </div>
-        <div class="input-field col s6">
-          <input name="childAge" id="last_name" type="text" class="validate">
-          <label for="last_name">Возраст ученика</label>
+        <div class='row'>
+          <div class='input-field col s6'>
+            <input name='childExp' id='childExp' type='text' class='validate' />
+            <label for='childExp'>Опыт ученика</label>
+          </div>
+          <div class='input-field col s6'>
+            <input name='childAge' id='childAge' type='text' class='validate' />
+            <label for='childAge'>Возраст ученика</label>
+          </div>
+        </div>
+        <div>
+          <input name='role' id='role' value='parent' />
         </div>
       </div>
-      <div>
-        <input name="role" id="role" value="parent">
-      </div>
-  </div>
     </div>
 
-    <div class="modal-footer">
-      <button type="submit" class="modal-close waves-effect waves-green btn-flat">Зарегистрироваться</button>
+    <div class='modal-footer'>
+      <button
+        type='submit'
+        class='modal-close waves-effect waves-green btn-flat'
+      >Зарегистрироваться</button>
     </div>
-    </form>
-  </div>
+  </form>
+</div>
+
+<div id='modal2' class='modal modal-fixed-footer'>
+
+  <form class='col s12' method='POST' action='/users/signup'>
+    <div class='modal-content'>
+      <div class='row'>
+        <div class='row'>
+          <div class='input-field col s12'>
+            <input
+              name='password'
+              id='password2'
+              type='password'
+              class='validate'
+            />
+            <label for='password2'>Пароль</label>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='input-field col s12'>
+            <input name='email' id='email2' type='email' class='validate' />
+            <label for='email2'>Электронный адрес</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='modal-footer'>
+      <button
+        type='submit'
+        class='modal-close waves-effect waves-green btn-flat'
+      > Войти</button>
+    </div>
+  </form>
+</div>
