@@ -2,7 +2,7 @@
 <div class="col s4">
 <ul class="tabs tab-demo z-depth-1">
     <li class="tab poher"><a href="#main">ОСНОВНЫЕ</a></li>
-    <li class="tab poher"><a href="#teachers">УЧИТЕЛЯ</a><button class="profile-left-side-buttons"></button></li>
+    <li class="tab poher"><a href="#teachers">УЧИТЕЛЯ</a><button data-target='modal3' class="modal-trigger profile-left-side-buttons"></button></li>
     <li class="tab poher"><a href="#students">УЧЕНИКИ</a><button class="profile-left-side-buttons"></button></li>
     <li class="tab poher"><a href="#classes">ЗАНЯТИЯ</a><button class="profile-left-side-buttons"></button></li>
     <li class="tab poher"><a href="#tests">ТЕСТЫ</a><button class="profile-left-side-buttons"></button></li>
@@ -11,9 +11,40 @@
 </div>
 
 
-
-<div  class="col s8">
-  <div id="main" class="tab-wrapper z-depth-1"><div>Главная страница</div></div>
+<div  class="col s8 right-side-supermain-container" >
+  {{!-- правая сторона старт --}}
+  <div id="main" class="tab-wrapper z-depth-1">
+    {{!-- <div>Главная страница</div> --}}
+    <div class="col s12 m7 right-side-main-container">
+    <div class="card horizontal">
+      <div class="right-side-photo-container">
+      <div class="card-image">
+        <img src="https://thumb.tildacdn.com/tild3039-6462-4664-b562-666433626234/-/format/webp/5-min.png">
+      </div>
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information.</p>
+        </div>
+      </div>
+    </div>
+     <div class="card horizontal">
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information.</p>
+        </div>
+      </div>
+    </div>
+     <div class="card horizontal">
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+  {{!-- правая сторона конец --}}
   {{!-- <div id="teachers" class="tab-wrapper z-depth-1"><div>Учителя</div></div> --}}
   <div id="teachers">
   {{!--ЗАГЛУШКИ-СТАРТ --}}
@@ -92,4 +123,69 @@
 
 </div>
 
+</div>
+
+
+
+<div id='modal3' class='modal modal-fixed-footer'>
+
+  <form class='col s12' method='POST' action='/users/signup'>
+    <div class='modal-content'>
+      <div class='row'>
+        <div class='row'>
+          <div class='input-field col s6'>
+            <input
+              name='first_name'
+              id='first_name'
+              type='text'
+              class='validate'
+            />
+            <label for='first_name'>Имя Учителя</label>
+          </div>
+          <div class='input-field col s6'>
+            <input
+              name='last_name'
+              id='last_name'
+              type='text'
+              class='validate'
+            />
+            <label for='last_name'>Фамилия Учителя</label>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='input-field col s12'>
+            <input
+              name='password'
+              id='password'
+              type='password'
+              class='validate'
+            />
+            <label for='password'>Пароль</label>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='input-field col s12'>
+            <input name='phone' id='phone' type='text' class='validate' />
+            <label for='phone'>Номер телефона</label>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='input-field col s12'>
+            <input name='email' id='email' type='email' class='validate' />
+            <label for='email'>Электронный адрес</label>
+          </div>
+        </div>
+        <div>
+          <input name='role' id='role' value='teacher' />
+        </div>
+      </div>
+    </div>
+
+    <div class='modal-footer'>
+      <button
+        type='submit'
+        class='modal-close waves-effect waves-green btn-flat'
+      >Добавить Учителя</button>
+    </div>
+  </form>
 </div>

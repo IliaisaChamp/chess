@@ -1,9 +1,9 @@
 body {
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
-  
+
   /* background-image: url('../pics/chassbg.png'); */
   /* background-size: 100%; */
-  background: linear-gradient(rgb(245, 99, 106), rgb(0, 156, 143));
+  background: linear-gradient(rgb(243, 199, 201), rgb(210, 245, 242));
   height: 100vh;
   /* background-size: cover; */
 }
@@ -106,3 +106,82 @@ ul.tabs .tab {
   position: relative;
   padding-right: 40px;
 } */
+/* 
+.right-side-supermain-container {
+  background-color: white !important;
+} */
+
+.right-side-main-container {
+  height: 382px !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+.right-side-photo-container {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  margin: 0 !important;
+  height: 50%;
+}
+
+.card.horizontal .card-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  11.11% {
+    opacity: 1;
+  }
+  33.33% {
+    opacity: 1;
+  }
+  44.44% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadein {
+  display: flex;
+  position: relative;
+  height: 70%;
+}
+.fadein img {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  animation-name: fade;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+}
+.fadein img:nth-child(1) {
+  animation-delay: 0s;
+  border: 6px solid #a484c2;
+  border-radius: 25px;
+}
+.fadein img:nth-child(2) {
+  animation-delay: 3s;
+  border: 6px solid #609ce1;
+  border-radius: 25px;
+}
+.fadein img:nth-child(3) {
+  animation-delay: 6s;
+  border: 6px solid #b4b87c;
+  border-radius: 25px;
+}
+
