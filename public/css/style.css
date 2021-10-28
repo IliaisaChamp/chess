@@ -2,6 +2,8 @@ body {
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
   /* background-image: url('../pics/chassbg.png'); */
   /* background-size: 100%; */
+  background: linear-gradient(rgb(245, 99, 106), rgb(0, 156, 143));
+  height: 100vh;
   /* background-size: cover; */
 }
 
@@ -9,7 +11,7 @@ a {
   color: #00b7ff;
 }
 .container {
-  /* padding: 50px; */
+  padding: 50px;
   width: 100%;
   /* height: 800px; */
 }
@@ -34,3 +36,58 @@ ul.tabs .tab {
 .tab-wrapper {
   background-color: #fff;
 }
+
+.profile-right-side-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+
+.profile-right-side-buttons li:not(:last-child) {
+  margin-right: 5px;
+}
+
+.profile-right-side-areas {
+  height: 48px;
+  display: flex;
+}
+
+.profile-right-side-textarea {
+  max-width: 50%;
+  display: flex;
+  /* padding: 5px; */
+  align-items: center;
+  margin-right: auto;
+  padding: 0 0 0 10px;
+}
+
+.poher {
+  position: relative;
+}
+
+.profile-left-side-buttons {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 50%;
+  border: none;
+  width: 30px;
+  height: 30px;
+  background-color: #26a69a;
+}
+
+.profile-left-side-buttons:before {
+  content: '+';
+  opacity: 50%;
+  transform: translateX(50%);
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+
+/* .tab {
+  position: relative;
+  padding-right: 40px;
+} */
