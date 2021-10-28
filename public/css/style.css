@@ -1,5 +1,6 @@
 body {
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  
   /* background-image: url('../pics/chassbg.png'); */
   /* background-size: 100%; */
   background: linear-gradient(rgb(245, 99, 106), rgb(0, 156, 143));
@@ -10,10 +11,24 @@ body {
 a {
   color: #00b7ff;
 }
+
+.header-title {
+  font-family: 'Rampart One', cursive;
+  font-weight: normal;
+  font-size: 5em;
+  text-align: center;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
+  margin-top: 3px;
+}
+
 .container {
   padding: 50px;
   width: 100%;
-  /* height: 800px; */
 }
 
 #role {
