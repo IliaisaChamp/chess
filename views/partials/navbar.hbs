@@ -5,14 +5,11 @@
       <img src='/images/logo.png' alt='' class="logo"/></a>
 
     <ul id='nav-mobile' class='right hide-on-med-and-down'>
-      <li><a href='/profile'>Личный кабинет</a></li>
       <li><a href='collapsible.html'>Бесплатный урок</a></li>
       {{#if user}}
+      <li><a href='/profile'>Личный кабинет</a></li>
         <li><a
             href='/users/logout'
-
-            {{! data-target='modal2'
-            class='modal-trigger' }}
           >Выйти</a></li>
       {{else}}
         <li><a
