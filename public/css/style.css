@@ -1,17 +1,33 @@
 body {
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
-  /* background-image: url('../pics/chassbg.png'); */
-  /* background-size: 100%; */
-  /* background-size: cover; */
+  background-image: url('../images/background.jpg');
+  /* background-image: url('../images/bg07.jpg'); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
 a {
   color: #00b7ff;
 }
+
+.header-title {
+  font-family: 'Rampart One', cursive;
+  font-weight: normal;
+  font-size: 5em;
+  text-align: center;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
+  margin-top: 3px;
+}
+
 .container {
-  /* padding: 50px; */
   width: 100%;
-  /* height: 800px; */
 }
 
 #role {

@@ -47,12 +47,12 @@ class UserController {
 
         if (currentUser) {
           req.session.user = { id: currentUser.id, name: currentUser.name };
-          return res.redirect('/');
+          return res.redirect('/users/profile');
         } else {
           return sendStatus(500);
         }
       } else {
-        return res.redirect('/');
+        return res.redirect('/users/profile');
       }
     } catch (error) {
       console.log(error);
