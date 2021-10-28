@@ -10,5 +10,4 @@ router.get('/profile', function(req, res, next) {
   res.render('profile', { title: 'Chess School' });
 });
 
-
 module.exports = router;
