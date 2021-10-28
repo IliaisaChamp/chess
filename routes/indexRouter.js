@@ -10,4 +10,9 @@ router.get('/profile', function(req, res, next) {
   res.render('profile', { title: 'Chess School' });
 });
 
+router.get('/create_test', function(req, res, next) {
+  res.render('profile', { title: 'Chess create test' });
+});
+
+
 module.exports = router;
