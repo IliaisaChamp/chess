@@ -5,7 +5,7 @@ module.exports = {
     let adminPass = 'qwerty'
     const cryptPass = await bcrypt.hash(adminPass, Number(process.env.SALT_ROUND))
     return queryInterface.bulkInsert('Users', [{
-      role: 'Admin',
+      role: 'admin',
       first_name: 'Admin',
       last_name: 'Admin',
       email: 'admin@admin.com',
