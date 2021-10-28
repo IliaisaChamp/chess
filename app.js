@@ -46,7 +46,7 @@ const testsRouter = require('./routes/testsRouter');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-// app.use('/tests', testsRouter);
+app.use('/tests', testsRouter);
 
 function start() {
   const PORT = process.env.PORT || 3000;
