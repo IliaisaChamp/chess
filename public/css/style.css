@@ -106,6 +106,13 @@ ul.tabs .tab {
   position: relative;
   padding-right: 40px;
 } */
+
+
+.buttons-wrapper {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 /* 
 .right-side-supermain-container {
   background-color: white !important;

@@ -32,7 +32,6 @@ for (let i = 0; i < 20; i++) {
   };
   seedParents.push(optionsParent);
 }
-console.log(seedTeachers);
 module.exports = {
   up: async (queryInterface, Sequelize) => {
 

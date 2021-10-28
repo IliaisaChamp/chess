@@ -1,0 +1,68 @@
+<div class=''>
+  <div style='margin-top: 3%' class='row'>
+    <div class='col s8 offset-s2 create-test_wrapper'>
+
+      <form method="POST" action="/tests/create-test" class="create-test__form">
+        <div class='buttons-wrapper'>
+          <a class='waves-effect waves-light btn new_question-btn'>Добавить вопрос</a>
+          <button
+            class='btn waves-effect waves-light'
+            type='submit'
+          >Загрузить новый тест
+          </button>
+        </div>
+
+        <div class='row'>
+          <div class='input-field col s6'>
+            <input
+              placeholder='Вопрос'
+              id='questions'
+              type='text'
+              class='validate'
+              name='question'
+            />
+          </div>
+          <div class='input-field col s6'>
+            <input
+              placeholder='Правильный ответ'
+              id='correct'
+              type='text'
+              class='validate'
+              name='options'
+              data-isright='true'
+            />
+          </div>
+          <div class='input-field col s6'>
+            <input
+              placeholder='Первый неправильный вопрос'
+              id='correct'
+              type='text'
+              class='validate'
+              name='options'
+              data-isright='false'
+            />
+          </div>
+          <div class='input-field col s6'>
+            <input
+              placeholder='Второй неправильный вопрос'
+              id='correct'
+              type='text'
+              class='validate'
+              name='options'
+              data-isright='false'
+            />
+          </div>
+        </div>
+      </form>
+        <hr />
+
+    </div>
+  </div>
+</div>
+<div
+  style='display: flex;
+  align-items: center;
+  justify-content: center'
+  class='col s8 offset-s2'
+>
+</div>
