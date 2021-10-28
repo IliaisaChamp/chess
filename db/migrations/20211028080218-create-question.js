@@ -9,12 +9,16 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       question: {
-        allowNull: false,
         type: Sequelize.STRING
       },
-      answer: {
+      test_id: {
+        type: Sequelize.INTEGER,
         allowNull: false,
-        type: Sequelize.STRING
+        references:{
+          model: 'Tests',
+          key: 'id'
+        },
+        onDelete: "CASCADE",
       },
       createdAt: {
         allowNull: false,

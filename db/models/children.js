@@ -13,21 +13,24 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-  Children.init({
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false
+  Children.init(
+    {
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      info: DataTypes.TEXT,
+      age: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      exp: DataTypes.STRING,
+      user_id: DataTypes.INTEGER,
     },
-    info: DataTypes.TEXT,
-    age: {
-      type: DataTypes.INTEGER,
-      allowNull: false
+    {
+      sequelize,
+      modelName: 'Children',
     },
-    exp: DataTypes.STRING,
-    user_id: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Children',
-  });
+  );
   return Children;
 };
