@@ -52,7 +52,9 @@ class UserController {
           return sendStatus(500);
         }
       } else {
+
         return res.redirect('/users/profile');
+
       }
     } catch (error) {
       console.log(error);
