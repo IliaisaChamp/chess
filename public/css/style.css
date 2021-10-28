@@ -1,6 +1,6 @@
 body {
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
-  
+
   /* background-image: url('../pics/chassbg.png'); */
   /* background-size: 100%; */
   background: linear-gradient(rgb(245, 99, 106), rgb(0, 156, 143));
@@ -106,3 +106,8 @@ ul.tabs .tab {
   position: relative;
   padding-right: 40px;
 } */
+
+.buttons-wrapper {
+  margin-bottom: 20px;
+  text-align: center;
+}

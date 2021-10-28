@@ -49,20 +49,20 @@ class UserController {
       const { email, password } = req.body;
       if (email && password) {
         const currentUser = await UserService.findUser({ email, password });
-        console.log(currentUser);
+
         if (currentUser) {
-          console.log(currentUser);
+
           req.session.user = {
             id: currentUser.id,
-            name: currentUser.name,
+            name: currentUser.first_name,
             role: currentUser.role,
           };
-          return res.redirect('/users/profile');
+          return res.redirect('/profile');
         } else {
-          return sendStatus(500);
+          return res.sendStatus(500);
         }
       } else {
-        return res.redirect('/users/profile');
+        return res.redirect('/profile');
       }
     } catch (error) {
       console.log(error);

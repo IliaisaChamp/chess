@@ -1,14 +1,17 @@
-function setQuestionTmpl(question) {
+function setQuestionTempl(data) {
+  const { question, answers } = data
+  console.log(question);
+  setOption(answers);
   return `
       <div class="row">
-    <div class="col s12 m6">
+      <div class="col s12 m6">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title">Вопрос</span>
-          <p>${question.question}</p>
+          <p>${question}</p>
         </div>
         <div class="card-action">
-           ${setOption(question.options)}
+           ${setOption(answers)}
         </div>
       </div>
       <a class="waves-effect waves-light btn button_confirm">Ответить</a>
@@ -18,19 +21,17 @@ function setQuestionTmpl(question) {
 }
 
 function setOption(options) {
-  const str = ''
-  options.forEach(el => {
+  let str = '';
+  options.forEach((el) => {
     str += `
       <label>
             <input type="checkbox" class="filled-in" checked="checked" data-isright="${el.isRight}"/>
             <span>${el.answer}</span>
-            </label>
-    `
+          </label>
+    `;
   });
-
+  console.log(str);
   return str;
-
 }
 
-
-module.export =
+export default setQuestionTempl;

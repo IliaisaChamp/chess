@@ -3,20 +3,25 @@ const { Children, User, Test, Question, Options } = require('../db/models');
 
 class UserService {
   static async createTest(data) {
+//     {
+//   questions: [ 'Кто ходит первым?', 'Родина шахмат' ],
+//   options: [ 'белые', 'черные', 'конь', 'Индия', 'Китай', 'Англия' ]
+// }
     try {
-      const { level, questions } = data;
-      const test = await Test.create({ level });
-      
-      const questionsToDB = questions.map((el) => ({
-        question: el.question,
+      const { question, options } = data;
+      const test = await Test.create();
+
+      const questionsToDB = questions.map((el, id) => ({
+        question: el,
         test_id: test.id,
       }));
-      const q = await Question.bulkCreate(questionsToDB);
+      const questionsFromDB = await Question.bulkCreate(questionsToDB);
 
-      const optionsToDB = questions.map((el) => ({
+      
+      const optionsToDB = questionsFromDB.map((el) => ({
         answer: el.options
-          isRight:
-        question_id:
+        isRight:
+        question_id: el.id
       }))
 
       const opt = await Options.bulkCreate();
