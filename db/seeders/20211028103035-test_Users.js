@@ -35,6 +35,7 @@ for (let i = 0; i < 20; i++) {
 console.log(seedTeachers);
 module.exports = {
   up: async (queryInterface, Sequelize) => {
+
     return queryInterface.bulkInsert('Users', seedParents);
   },
 

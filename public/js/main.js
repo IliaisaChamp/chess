@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const instance = M.Tabs.init(el);
 });
 
+
+
 const startTestBtn = document.querySelector('.start-test');
 startTestBtn.addEventListener('click', async () => {
   try {
