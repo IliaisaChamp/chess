@@ -1,29 +1,29 @@
-// import setQuestionTempl from './templ/question.js';
-// const container = document.querySelector('.test_container');
+import setQuestionTempl from './templ/question.js';
+const container = document.querySelector('.test_container');
 
-// export default function chessTest(questions) {
-//   container.innerHTML = '';
-//   if (questions.length) {
-//     const question = questions.shift();
-//     console.log(container);
-//     container.innerHTML = setQuestionTempl(question);
+export default function chessTest(questions) {
+  container.innerHTML = '';
+  if (questions.length) {
+    const question = questions.shift();
 
-//     const buttonNext = document.querySelector('.button_confirm');
+    container.innerHTML = setQuestionTempl(question);
 
-//     // buttonNext.addEventListener('click', async (e) => {
-//     //   const answersFromUser = document.querySelectorAll('[data-isright]');
+    const buttonNext = document.querySelector('.button_confirm');
 
-//     //   let result = 0;
-//     //   for (const checkbox of answersFromUser) {
-//     //     if (checkbox.checked && checkbox.dataset.isright === true) {
-//     //       result + 20;
-//     //     }
-//     //   }
+    // buttonNext.addEventListener('click', async (e) => {
+    //   const answersFromUser = document.querySelectorAll('[data-isright]');
 
-//     //   chessTest(questions);
-//     // });
-//   } else {
-//     container.innerHTML = setResultTmp(result);
-//     return result;
-//   }
-// }
+    //   let result = 0;
+    //   for (const checkbox of answersFromUser) {
+    //     if (checkbox.checked && checkbox.dataset.isright === true) {
+    //       result + 20;
+    //     }
+    //   }
+
+    //   chessTest(questions);
+    // });
+  } else {
+    container.innerHTML = setResultTmp(result);
+    return result;
+  }
+}

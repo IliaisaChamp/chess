@@ -4,7 +4,7 @@ export default function addNewQuestionField() {
           <div class='input-field col s6'>
             <input
               placeholder='Вопрос'
-              id='question'
+              id='questions'
               type='text'
               class='validate'
               name='questions'

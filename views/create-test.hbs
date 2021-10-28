@@ -1,8 +1,10 @@
+<script defer type="module" src="/js/test.js"></script>
+
 <div class=''>
   <div style='margin-top: 3%' class='row'>
     <div class='col s8 offset-s2 create-test_wrapper'>
-
-      <form method="POST" action="/tests/create-test" class="create-test__form">
+      {{!-- method="POST" action="/tests/create-test" --}}
+      <form class="create-test__form" method="POST" action="/tests/create-test">
         <div class='buttons-wrapper'>
           <a class='waves-effect waves-light btn new_question-btn'>Добавить вопрос</a>
           <button
@@ -19,7 +21,7 @@
               id='questions'
               type='text'
               class='validate'
-              name='question'
+              name='questions'
             />
           </div>
           <div class='input-field col s6'>

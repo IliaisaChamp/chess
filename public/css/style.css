@@ -2,10 +2,9 @@ body {
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 
   /* background-image: url('../pics/chassbg.png'); */
-  /* background-size: 100%; */
   background: linear-gradient(rgb(243, 199, 201), rgb(210, 245, 242));
   height: 100vh;
-  /* background-size: cover; */
+
 }
 
 a {
@@ -113,7 +112,7 @@ ul.tabs .tab {
   text-align: center;
 }
 
-/* 
+/*
 .right-side-supermain-container {
   background-color: white !important;
 } */
@@ -191,4 +190,3 @@ ul.tabs .tab {
   border: 6px solid #b4b87c;
   border-radius: 25px;
 }
-

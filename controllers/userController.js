@@ -4,10 +4,10 @@ class UserController {
   static async create(req, res) {
     try {
       const { email, first_name, last_name, phone, password, role } = req.body;
+      console.log(req.body);
       switch (role) {
         case 'parent':
           const user = await UserService.findUser(req.body);
-
           if (!user) {
             const currentUser = await UserService.createParentUser(req.body);
             req.session.user = {
@@ -28,11 +28,12 @@ class UserController {
             last_name,
             phone,
             password,
+            role: role,
           });
           req.session.user = {
             id: currentTeacher.id,
             name: currentTeacher.first_name,
-            role: currentUser.role,
+            role: currentTeacher.role,
           };
           break;
       }
