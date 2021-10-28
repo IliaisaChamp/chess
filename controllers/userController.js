@@ -10,7 +10,11 @@ class UserController {
 
           if (!user) {
             const currentUser = await UserService.createParentUser(req.body);
-            req.session.user = { id: currentUser.id, name: currentUser.first_name };
+            req.session.user = {
+              id: currentUser.id,
+              name: currentUser.first_name,
+              role: currentUser.role,
+            };
             return res.redirect('/');
           } else {
             console.log('Такой пользователь уже есть');
@@ -28,6 +32,7 @@ class UserController {
           req.session.user = {
             id: currentTeacher.id,
             name: currentTeacher.first_name,
+            role: currentUser.role,
           };
           break;
       }
@@ -44,15 +49,20 @@ class UserController {
       const { email, password } = req.body;
       if (email && password) {
         const currentUser = await UserService.findUser({ email, password });
-
+        console.log(currentUser);
         if (currentUser) {
-          req.session.user = { id: currentUser.id, name: currentUser.name };
-          return res.redirect('/');
+          console.log(currentUser);
+          req.session.user = {
+            id: currentUser.id,
+            name: currentUser.name,
+            role: currentUser.role,
+          };
+          return res.redirect('/users/profile');
         } else {
           return sendStatus(500);
         }
       } else {
-        return res.redirect('/');
+        return res.redirect('/users/profile');
       }
     } catch (error) {
       console.log(error);
@@ -60,13 +70,6 @@ class UserController {
     }
   }
 
-  static signinRender(req, res) {
-    res.render('signin');
-  }
-
-  static signupRender(req, res) {
-    res.render('signup');
-  }
 
   static logout(req, res) {
     req.session.destroy();
