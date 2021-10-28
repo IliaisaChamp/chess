@@ -76,6 +76,15 @@ class UserService {
       throw error;
     }
   }
+
+  static async getCurrentUsers(id) {
+    try {
+      const user = await User.findOne({where: {id}});
+      return user;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 module.exports = UserService;

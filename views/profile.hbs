@@ -1,135 +1,84 @@
-
+<script defer type="module" src="/js/redirect.js"></script>
 <div class="row">
 <div class="col s4">
 <ul class="tabs tab-demo z-depth-1">
     <li class="tab poher"><a href="#main">ОСНОВНЫЕ</a></li>
+    {{#if (ownerCheck user 'teacher')}}
+    {{else}}
     <li class="tab poher"><a href="#teachers">УЧИТЕЛЯ</a><button data-target='modal3' class="modal-trigger profile-left-side-buttons"></button></li>
+    {{/if}}
     <li class="tab poher"><a href="#students">УЧЕНИКИ</a><button class="profile-left-side-buttons"></button></li>
     <li class="tab poher"><a href="#classes">ЗАНЯТИЯ</a><button class="profile-left-side-buttons"></button></li>
+    {{#if (ownerCheck user 'teacher')}}
+    {{else}}
     <li class="tab poher"><a href="#tests">ТЕСТЫ</a><button class="profile-left-side-buttons new-test_btn"></button></li>
+    {{/if}}
     <li class="tab poher"><a href="#settings">НАСТРОЙКИ</a></li>
   </ul>
 </div>
 
 
-
 <div  class="col s8 right-side-supermain-container" >
-  {{!-- правая сторона старт --}}
   <div id="main" class="tab-wrapper z-depth-1">
-    {{!-- <div>Главная страница</div> --}}
-    <div class="col s12 m7 right-side-main-container">
-    <div class="card horizontal">
-      <div class="right-side-photo-container">
-      <div class="card-image">
-        <img src="https://thumb.tildacdn.com/tild3039-6462-4664-b562-666433626234/-/format/webp/5-min.png">
-      </div>
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information.</p>
-        </div>
-      </div>
-    </div>
-     <div class="card horizontal">
-      <div class="card-stacked">
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information.</p>
-        </div>
-      </div>
-    </div>
-     <div class="card horizontal">
-      <div class="card-stacked">
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information.</p>
-        </div>
-      </div>
-    </div>
+    {{> userinfo}}
   </div>
-    </div>
-  {{!-- правая сторона конец --}}
-  {{!-- <div id="teachers" class="tab-wrapper z-depth-1"><div>Учителя</div></div> --}}
-
-
-<div  class="col s8">
-  <div id="main" class="tab-wrapper z-depth-1"><div>Главная страница</div></div>
-
-  <div id="teachers">
-  {{!--ЗАГЛУШКИ-СТАРТ --}}
-    <div class="tab-wrapper z-depth-1 profile-right-side-areas">
-    <p class="profile-right-side-textarea">Абрамов Бенедикт Ильяович</p>
-    <ul class="profile-right-side-buttons">
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>редактировать</a></li>
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>заблокировать</a></li>
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>удалить</a></li>
-    </ul>
-  </div>
-  <div class="tab-wrapper z-depth-1 profile-right-side-areas">
-    <p class="profile-right-side-textarea">Михеев Пантелей Семенович</p>
-    <ul class="profile-right-side-buttons">
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>редактировать</a></li>
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>заблокировать</a></li>
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>удалить</a></li>
-    </ul>
-  </div>
-  <div class="tab-wrapper z-depth-1 profile-right-side-areas">
-    <p class="profile-right-side-textarea">Силин Велорий Михаилович</p>
-    <ul class="profile-right-side-buttons">
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>редактировать</a></li>
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>заблокировать</a></li>
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>удалить</a></li>
-    </ul>
-  </div>
-  <div class="tab-wrapper z-depth-1 profile-right-side-areas">
-    <p class="profile-right-side-textarea">Власов Агафон Германович</p>
-    <ul class="profile-right-side-buttons">
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>редактировать</a></li>
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>заблокировать</a></li>
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>удалить</a></li>
-    </ul>
-  </div>
-  <div class="tab-wrapper z-depth-1 profile-right-side-areas">
-    <p class="profile-right-side-textarea">Аксёнов Авраам Гордеевич</p>
-    <ul class="profile-right-side-buttons">
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>редактировать</a></li>
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>заблокировать</a></li>
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>удалить</a></li>
-    </ul>
-  </div><div class="tab-wrapper z-depth-1 profile-right-side-areas">
-    <p class="profile-right-side-textarea">Власов Агафон Германович</p>
-    <ul class="profile-right-side-buttons">
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>редактировать</a></li>
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>заблокировать</a></li>
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>удалить</a></li>
-    </ul>
-  </div><div class="tab-wrapper z-depth-1 profile-right-side-areas">
-    <p class="profile-right-side-textarea">Кошелев Ян Артёмович</p>
-    <ul class="profile-right-side-buttons">
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>кнопка</a></li>
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>кнопка</a></li>
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>кнопка</a></li>
-    </ul>
-  </div>
-
-{{!-- ЗАГЛУШКИ-ФИНИШ --}}
-  </div>
-  <div id="students" class="tab-wrapper z-depth-1"><div>stu</div></div>
-  <div id="classes"><div class="tab-wrapper z-depth-1">Test 3</div></div>
-  <div id="tests"><div class="tab-wrapper z-depth-1">Test 4</div></div>
-  <div id="settings">
-  {{!-- Див-пример-начало --}}
-    <div class="tab-wrapper z-depth-1 profile-right-side-areas">
-    <p class="profile-right-side-textarea">ТРАТАРАТРАРАРРА</p>
-    <ul class="profile-right-side-buttons">
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>редактировать</a></li>
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>заблокировать</a></li>
-      <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>удалить</a></li>
-    </ul>
-  </div>
-{{!-- Див-пример-конец --}}
-  </div>
-
 </div>
 
+<div  class="col s8 right-side-supermain-container">
+
+  <div id="teachers" class="tab-wrapper z-depth-1">
+    {{#each users}}
+      {{#if (ownerCheck this 'teacher')}}
+        <div class="tab-wrapper z-depth-1 profile-right-side-areas">
+        <p class="profile-right-side-textarea">{{this.first_name}} {{this.last_name}}</p>
+        <ul class="profile-right-side-buttons">
+          <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>редактировать</a></li>
+          <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>заблокировать</a></li>
+          <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>удалить</a></li>
+        </ul>
+      </div>
+    {{/if}}
+    {{/each}}
+
+  </div>
+
+  <div id="students" class="tab-wrapper z-depth-1"><div>
+     {{#each users}}
+      {{#if (ownerCheck this 'parent')}}
+         <div class="tab-wrapper z-depth-1 profile-right-side-areas">
+        <p class="profile-right-side-textarea">{{this.first_name}} {{this.last_name}}</p>
+      </div>
+      {{/if}}
+      {{/each}}
+  </div></div>
+  <div id="classes"><div class="tab-wrapper z-depth-1">Test 3</div></div>
+  {{#if (ownerCheck user 'teacher')}}
+  {{else}}
+    <div id="tests"><div class="tab-wrapper z-depth-1">
+      {{#each tests}}
+        {{#if (ownerCheck ../user 'admin')}}
+              <div class="tab-wrapper z-depth-1 profile-right-side-areas">
+                  <p class="profile-right-side-textarea">Тест№: {{this.id}}, создан: {{this.createdAt}}</p>
+              </div>
+        {{/if}}
+        {{/each}}
+    </div></div>
+  {{/if}}
+
+  <div id="settings">
+    {{!-- Див-пример-начало --}}
+      <div class="tab-wrapper z-depth-1 profile-right-side-areas">
+        <p class="profile-right-side-textarea">Дополнительный настройки</p>
+        <ul class="profile-right-side-buttons">
+          <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>редактировать</a></li>
+          <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>заблокировать</a></li>
+          <li><a class="waves-effect waves-light btn-small"><i class="material-icons left"></i>удалить</a></li>
+        </ul>
+      </div>
+  {{!-- Див-пример-конец --}}
+    </div>
+
+  </div>
 </div>
 
 
@@ -197,4 +146,3 @@
     </div>
   </form>
 </div>
-
