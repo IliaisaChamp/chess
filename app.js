@@ -15,9 +15,9 @@ const app = express();
 app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(process.cwd(), 'views/partials'));
 
-// hbs.registerHelper('ownerCheck', (post, user) => {
-//   return post.user_id === user.id;
-// });
+hbs.registerHelper('ownerCheck', (user, role) => {
+  return user.role === role;
+});
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -43,10 +43,12 @@ app.use((req, res, next) => {
 const indexRouter = require('./routes/indexRouter');
 const usersRouter = require('./routes/usersRouter');
 const testsRouter = require('./routes/testsRouter');
+const profileRouter = require('./routes/profileRouter');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/tests', testsRouter);
+app.use('/profile', profileRouter);
 
 function start() {
   const PORT = process.env.PORT || 3000;
