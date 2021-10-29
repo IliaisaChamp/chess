@@ -3,16 +3,16 @@
 <div class="col s4">
 <ul class="tabs tab-demo z-depth-1">
     <li class="tab poher"><a href="#main">ОСНОВНЫЕ</a></li>
-    {{#if (ownerCheck user 'teacher')}}
-    {{else}}
+    {{!-- {{#if (ownerCheck user 'teacher')}} --}}
+    {{!-- {{else}} --}}
     <li class="tab poher"><a href="#teachers">УЧИТЕЛЯ</a><button data-target='modal3' class="modal-trigger profile-left-side-buttons"></button></li>
-    {{/if}}
+    {{!-- {{/if}} --}}
     <li class="tab poher"><a href="#students">УЧЕНИКИ</a><button class="profile-left-side-buttons"></button></li>
     <li class="tab poher"><a href="#classes">ЗАНЯТИЯ</a><button class="profile-left-side-buttons"></button></li>
-    {{#if (ownerCheck user 'teacher')}}
-    {{else}}
+    {{!-- {{#if (ownerCheck user 'teacher')}} --}}
+    {{!-- {{else}} --}}
     <li class="tab poher"><a href="#tests">ТЕСТЫ</a><button class="profile-left-side-buttons new-test_btn"></button></li>
-    {{/if}}
+    {{!-- {{/if}} --}}
     <li class="tab poher"><a href="#settings">НАСТРОЙКИ</a></li>
   </ul>
 </div>

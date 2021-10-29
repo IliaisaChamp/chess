@@ -30,11 +30,6 @@ class UserController {
             password,
             role: role,
           });
-          req.session.user = {
-            id: currentTeacher.id,
-            name: currentTeacher.first_name,
-            role: currentTeacher.role,
-          };
           break;
       }
 
@@ -71,6 +66,12 @@ class UserController {
     }
   }
 
+
+
+  static deleteTeacher(req, res) {
+    req.session.destroy();
+    res.clearCookie('sid').redirect('/');
+  }
 
   static logout(req, res) {
     req.session.destroy();
