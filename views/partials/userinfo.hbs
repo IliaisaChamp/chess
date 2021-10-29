@@ -15,7 +15,11 @@
      <div class="card horizontal">
       <div class="card-stacked">
         <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information.</p>
+           {{#if (ownerCheck user 'teacher')}}
+           <a href="/chess-test" class='waves-effect waves-light btn start-test'>Пройти тест</a>
+           {{else}}
+           <p>I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information. I am a very simple card. I am good at containing small bits of information.</p>
+           {{/if}}
         </div>
       </div>
     </div>

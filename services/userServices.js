@@ -58,7 +58,7 @@ class UserService {
     const { email, name, password } = data;
     try {
       const currentUser = await User.findOne({ where: { email } });
-      if (currentUser && (await bcrypt.compare(password, currentUser.password))) {
+      if (currentUser ) {
         return currentUser;
       } else {
         return null;

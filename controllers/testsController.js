@@ -1,40 +1,34 @@
-const TetsService = require('../services/testsServices');
+const TestsService = require('../services/testsServices');
 
 class TestsController {
   static async createTest(req, res) {
     try {
-      console.log(req.body);
-      const isCreate = await TetsService.createTest(req.body);
+      const isCreate = await TestsService.createTest(req.body);
+      if (isCreate) {
+        res.redirect('profile');
+      } else {
+        res.redirect('create-test');
+      }
     } catch (error) {
       console.log(error);
     }
   }
 
   static async getTest(req, res) {
-    res.json({
-      level: 'начальный',
-      questions: [
-        {
-          question: 'Вопрос1',
-          answers: [
-            ['ответ', 'true'],
-            ['ответ', 'false'],
-            ['ответ', 'false'],
-          ],
-        },
-        {
-          question: 'Вопрос2',
-          options: {
-            ответ: true,
-            ответ: false,
-            ответ: false,
-          },
-        },
-      ],
-    });
+    const { id } = req.params;
+    try {
+      const questionFromDb = await TestsService.getQuestions(id);
+      // const questions = {}
+      // for (const iterator of questionFromDb) {
+      //   questions[iterator['Question.question']]
+      // }
+      // console.log(questions);
+      // // res.json()
+    } catch (error) {
+      // res.sendStatus(500);
+      console.log(error);
+    }
   }
-
-
 }
 
 module.exports = TestsController;

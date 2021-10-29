@@ -34,6 +34,16 @@ for (let i = 0; i < 20; i++) {
 }
 module.exports = {
   up: async (queryInterface, Sequelize) => {
+    queryInterface.bulkInsert('Users', [{
+      role: 'parent',
+      first_name: 'Илья',
+      last_name: 'Волошин',
+      email: 'voloshin@yandex.ru',
+      password: 'qwerty',
+      phone: faker.phone.phoneNumber(),
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    }]);
 
     return queryInterface.bulkInsert('Users', seedParents);
   },
