@@ -50,7 +50,7 @@ class UserController {
       const { email, password } = req.body;
       if (email && password) {
         const currentUser = await UserService.findUser({ email, password });
-
+        console.log(currentUser);
         if (currentUser) {
 
           req.session.user = {
