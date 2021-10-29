@@ -4,7 +4,6 @@ body {
   /* background-image: url('../pics/chassbg.png'); */
   background: linear-gradient(rgb(243, 199, 201), rgb(210, 245, 242));
   height: 100vh;
-
 }
 
 a {
@@ -106,7 +105,6 @@ ul.tabs .tab {
   padding-right: 40px;
 } */
 
-
 .buttons-wrapper {
   margin-bottom: 20px;
   text-align: center;
@@ -177,16 +175,24 @@ ul.tabs .tab {
 }
 .fadein img:nth-child(1) {
   animation-delay: 0s;
-  border: 6px solid #a484c2;
+  /* border: 6px solid #a484c2; */
   border-radius: 25px;
+  box-shadow: 0 0 40px rgba(155, 54, 54, 0.5);
 }
 .fadein img:nth-child(2) {
   animation-delay: 3s;
-  border: 6px solid #609ce1;
+  /* border: 6px solid #609ce1; */
   border-radius: 25px;
+  box-shadow: 0 0 40px rgba(184, 14, 119, 0.5);
 }
 .fadein img:nth-child(3) {
   animation-delay: 6s;
-  border: 6px solid #b4b87c;
+  /* border: 6px solid #b4b87c; */
   border-radius: 25px;
+  box-shadow: 0 0 40px rgba(57, 61, 162, 0.5);
+}
+
+.row ::placeholder {
+  /* color: rgb(55, 170, 158); */
+  color: rgb(236, 111, 117);
 }

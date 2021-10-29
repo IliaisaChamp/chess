@@ -5,5 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const instances = M.Modal.init(elems);
   const el = document.querySelectorAll('.tabs');
   const instance = M.Tabs.init(el);
+  const elements = document.querySelectorAll('.datepicker');
+  const instancess = M.Datepicker.init(elements);
 });
 
